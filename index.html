@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <style></style>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              red: "hsl(0, 100%, 74%) ",
+              green: "hsl(154, 59%, 51%)",
+              blue: "hsl(248, 32%, 49%)",
+              darkBlue: "hsl(249, 10%, 26%) ",
+              grayishBlue: "hsl(246, 25%, 77%)",
+            },
+            fontFamily: {
+              Poppins: ["Poppins", "ui-sans-serif"],
+            },
+            backgroundImage: {
+              "intro-desktop": "url('./images/bg-intro-desktop.png')",
+              "intro-mobile": "url('./images/bg-intro-mobile.png')",
+            },
+            boxShadow: {
+              custom: "0px 8px 1px -3px rgba(0,0,0,0.2)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+  </head>
+  <body
+    class="font-Poppins min-h-screen bg-red bg-intro-mobile object-cover object-center bg-no-repeat md:bg-intro-desktop flex flex-col justify-center items-center"
+  >
+    <main
+      class="max-w-md md:max-w-5xl flex flex-col justify-center items-center md:flex-row px-8 my-12 md:gap-8"
+    >
+      <div class="content text-white text-center md:text-left md:px-4">
+        <h1 class="text-2xl font-bold md:text-4xl">
+          Learn to code by watching others
+        </h1>
+        <p class="text-sm mt-6">
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
+      <div class="md:mt-4 w-full mt-16">
+        <div
+          class="bg-blue rounded-md min-w-full shadow-custom text-white text-sm text-center flex justify-center items-center py-4 px-4"
+        >
+          <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
+        </div>
+        <form
+          class="form-container w-full bg-white rounded-md my-4 p-4 shadow-custom"
+        >
+          <div class="form-controller relative flex flex-col">
+            <input
+              type="text"
+              id="fname"
+              class="invalid border w-full rounded-md py-3 pl-8 placeholder:text-xs focus:outline-none focus:border-darkBlue mt-2"
+              placeholder="First Name"
+            />
+            <img
+              src="./images/icon-error.svg"
+              alt="err"
+              id=""
+              class="err-fname absolute bottom-1/2 right-6 transform translate-y-1/2 hidden"
+            />
+          </div>
+          <div class="text-right">
+            <span
+              class="err-fname text-[10px] text-red text-right self-end pt-1 hidden"
+              >First Name cannot be empty</span
+            >
+          </div>
+          <div class="form-controller relative flex flex-col">
+            <input
+              type="text"
+              id="lname"
+              class="border w-full rounded-md py-3 pl-8 placeholder:text-xs focus:outline-none focus:border-darkBlue mt-2"
+              placeholder="Last Name"
+            />
+            <img
+              src="./images/icon-error.svg"
+              alt="err"
+              class="err-lname absolute bottom-1/2 right-6 transform translate-y-1/2 hidden"
+            />
+          </div>
+          <div class="text-right">
+            <span
+              class="err-lname text-[10px] text-red text-right self-end pt-1 hidden"
+              >Last Name cannot be empty</span
+            >
+          </div>
+          <div class="form-controller relative flex flex-col">
+            <input
+              type="email"
+              id="email"
+              class="border w-full rounded-md py-3 pl-8 placeholder:text-xs focus:outline-none focus:border-darkBlue mt-2"
+              placeholder="Email Address"
+            />
+            <img
+              src="./images/icon-error.svg"
+              alt="err"
+              class="err-email absolute bottom-1/2 right-6 transform translate-y-1/2 hidden"
+            />
+          </div>
+          <div class="text-right">
+            <span
+              class="err-email text-[10px] text-red text-right self-end pt-1 hidden"
+              >Looks like this is not an email</span
+            >
+          </div>
+          <div class="form-controller relative flex flex-col">
+            <input
+              type="password"
+              id="password"
+              class="border w-full rounded-md py-3 pl-8 placeholder:text-xs focus:outline-none focus:border-darkBlue mt-2"
+              placeholder="Password"
+            />
+            <img
+              src="./images/icon-error.svg"
+              alt="err"
+              class="err-password absolute bottom-1/2 right-6 transform translate-y-1/2 hidden"
+            />
+          </div>
+          <div class="text-right">
+            <span
+              class="err-password text-[10px] text-red text-right self-end pt-1 hidden"
+              >Password cannot be empty</span
+            >
+          </div>
+
+          <button
+            type="submit"
+            id="btn"
+            class="text-white bg-green block w-full rounded-md py-3 mt-4 uppercase text-xs font-semibold text-semibold"
+          >
+            Claim your free trial
+          </button>
+          <p
+            class="text-[10px] font-semibold mt-4 text-grayishBlue px-5 text-center leading-5"
+          >
+            By clicking the button, you are agreeing to our
+            <span class="text-red font-bold"> Terms and Services</span>
+          </p>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
